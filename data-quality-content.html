@@ -1,0 +1,102 @@
+<DIV class="container-fluid" >    <DIV class="row-fluid" >        <DIV class="span12 well" >            <DIV class="head" >                <H1 >Data Quality</H1>                <P >Keep your data clean and tidy without annoying your users.</P>            </DIV>        </DIV>    </DIV>    <DIV class="row-fluid" >        <DIV class="span3" >                            <UL data-dojo-attach-point="containerNode" class="nav nav-list well" id="serverParsed_6_0" dir="ltr" widgetId="serverParsed_6_0" data-dojo-type="docs/SideNav" data-dojo-props="&quot;_rendered&quot;:true" ><LI data-havok-handler-id="0" data-havok-spy-target="filters" ><A role="navitem" href="#filters" ><I style="line-height:20px" class="fa fa-chevron-right pull-right" ></I> Filters</A></LI><LI data-havok-handler-id="1" data-havok-spy-target="validators" ><A role="navitem" href="#validators" ><I style="line-height:20px" class="fa fa-chevron-right pull-right" ></I> Validators</A></LI></UL>                    </DIV>        <DIV class="span9" id="mainContent" >                <SECTION id="filters" title="Filters" ><H1 >Filters</H1>
+<P >Filters are normally used by form widgets to process raw input data. They may be used individually, or chained together.</P>
+<H2 >Trim</H2><DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Trim', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(Trim, dom, on){
+               on(dom.byId('trimButton'), 'click', function(){
+                   var trim = new Trim;
+                   dom.byId('trimOutput').innerHTML = '"' + trim.filter(dom.byId('trimInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="trimInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="trimButton" class="btn" >click to filter</BUTTON>        <PRE id="trimOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >var</SPAN><SPAN class="pln" > trim </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Trim</SPAN><SPAN class="pun" >,</SPAN></LI><LI class="L1" ><SPAN class="pln" >    filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > trim</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI></OL></PRE>
+<H2 >Lowercase</H2><DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Lowercase', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(Lowercase, dom, on){
+               on(dom.byId('lowercaseButton'), 'click', function(){
+                   var lowercase = new Lowercase;
+                   dom.byId('lowercaseOutput').innerHTML = '"' + lowercase.filter(dom.byId('lowercaseInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="lowercaseInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="lowercaseButton" class="btn" >click to filter</BUTTON>        <PRE id="lowercaseOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >var</SPAN><SPAN class="pln" > lowercase </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Lowercase</SPAN><SPAN class="pun" >,</SPAN></LI><LI class="L1" ><SPAN class="pln" >    filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > lowercase</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI></OL></PRE>
+<H2 >Uppercase</H2><DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Uppercase', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(Uppercase, dom, on){
+               on(dom.byId('uppercaseButton'), 'click', function(){
+                   var uppercase = new Uppercase;
+                   dom.byId('uppercaseOutput').innerHTML = '"' + uppercase.filter(dom.byId('uppercaseInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="uppercaseInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="uppercaseButton" class="btn" >click to filter</BUTTON>        <PRE id="uppercaseOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >var</SPAN><SPAN class="pln" > uppercase </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Uppercase</SPAN><SPAN class="pun" >,</SPAN></LI><LI class="L1" ><SPAN class="pln" >    filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > uppercase</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI></OL></PRE>
+<H2 >Propercase</H2><DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Propercase', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(Propercase, dom, on){
+               on(dom.byId('propercaseButton'), 'click', function(){
+                   var propercase = new Propercase;
+                   dom.byId('propercaseOutput').innerHTML = '"' + propercase.filter(dom.byId('propercaseInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="propercaseInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="propercaseButton" class="btn" >click to filter</BUTTON>        <PRE id="propercaseOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >var</SPAN><SPAN class="pln" > propercase </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > propercase</SPAN><SPAN class="pun" >,</SPAN></LI><LI class="L1" ><SPAN class="pln" >    filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > propercase</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI></OL></PRE>
+<H2 >Chains</H2>
+<P >Chain filters together. The result of each filter will be passed to the next filter in the chain.</P>
+<DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Chain', 'havok/filter/Trim', 'havok/filter/Uppercase', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(Chain, Trim, Uppercase, dom, on){
+               on(dom.byId('chainButton'), 'click', function(){
+                   var chain = new Chain({filters: [
+                       new Trim,
+                       new Uppercase
+                   ]});
+                   dom.byId('chainOutput').innerHTML = '"' + chain.filter(dom.byId('chainInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="chainInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="chainButton" class="btn" >click to filter</BUTTON>        <PRE id="chainOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >var</SPAN><SPAN class="pln" > chain </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Chain</SPAN><SPAN class="pun" >({</SPAN><SPAN class="pln" >filters</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >[</SPAN></LI><LI class="L1" ><SPAN class="pln" >        </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Trim</SPAN><SPAN class="pun" >,</SPAN></LI><LI class="L2" ><SPAN class="pln" >        </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Uppercase</SPAN></LI><LI class="L3" ><SPAN class="pln" >    </SPAN><SPAN class="pun" >]}),</SPAN></LI><LI class="L4" ><SPAN class="pln" >    filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > chain</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI></OL></PRE>
+<H2 >Custom Filters</H2>
+<P >Define your own filters by extending from <CODE >havok/filter/Base</CODE> and overriding the <CODE >filter</CODE> method.</P>
+<DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/filter/Base', 'dojo/dom', 'dojo/on', 'dojo/_base/declare', 'dojo/domReady!'],
+           function(FilterBase, dom, on, declare){
+
+               var Dollar = declare([FilterBase], {
+                   filter: function(value){
+                       return '$' + value;
+                   }
+               });
+
+               on(dom.byId('customButton'), 'click', function(){
+                   var dollar = new Dollar;
+                   dom.byId('customOutput').innerHTML = '"' + dollar.filter(dom.byId('customInput').value) + '"';
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="customInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="customButton" class="btn" >click to filter</BUTTON>        <PRE id="customOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >require</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'havok/filter/Base'</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > </SPAN><SPAN class="str" >'dojo/_base/declare'</SPAN><SPAN class="pun" >],</SPAN></LI><LI class="L1" ><SPAN class="pln" >   </SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="typ" >FilterBase</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > declare</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L2" ><SPAN class="pln" > </SPAN></LI><LI class="L3" ><SPAN class="pln" >       </SPAN><SPAN class="kwd" >var</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Dollar</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > declare</SPAN><SPAN class="pun" >([</SPAN><SPAN class="typ" >FilterBase</SPAN><SPAN class="pun" >],</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >{</SPAN></LI><LI class="L4" ><SPAN class="pln" >           filter</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L5" ><SPAN class="pln" >               </SPAN><SPAN class="kwd" >return</SPAN><SPAN class="pln" > </SPAN><SPAN class="str" >'$'</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >+</SPAN><SPAN class="pln" > value</SPAN><SPAN class="pun" >;</SPAN></LI><LI class="L6" ><SPAN class="pln" >           </SPAN><SPAN class="pun" >}</SPAN></LI><LI class="L7" ><SPAN class="pln" >       </SPAN><SPAN class="pun" >});</SPAN></LI><LI class="L8" ><SPAN class="pln" > </SPAN></LI><LI class="L9" ><SPAN class="pln" >       </SPAN><SPAN class="kwd" >var</SPAN><SPAN class="pln" > dollar </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Dollar</SPAN><SPAN class="pun" >;</SPAN></LI><LI class="L0" ><SPAN class="pln" >       filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > dollar</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI><LI class="L1" ><SPAN class="pln" >   </SPAN><SPAN class="pun" >}</SPAN></LI><LI class="L2" ><SPAN class="pun" >)</SPAN></LI></OL></PRE>
+<H2 >Filter Factory</H2>
+<P >The filter factory can be used to create instances of filters. eg:</P>
+<DIV class="bs-docs-example" >    <SCRIPT >        require(['havok/get!havok/filter/factory', 'dojo/dom', 'dojo/on', 'dojo/domReady!'],
+           function(factory, dom, on){
+
+               on(dom.byId('factoryButton'), 'click', function(){
+                   factory.create(['Trim', 'Lowercase']).then(function(filter){
+                       dom.byId('factoryOutput').innerHTML = '"' + filter.filter(dom.byId('factoryInput').value) + '"';
+                   })
+               })
+           }
+        )
+    </SCRIPT>    <INPUT id="factoryInput" type="textbox" value="    Filter me noW    " ></INPUT>    <DIV class="well" >        <BUTTON id="factoryButton" class="btn" >click to filter</BUTTON>        <PRE id="factoryOutput" ></PRE>    </DIV></DIV>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >require</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'havok/get!havok/filter/factory'</SPAN><SPAN class="pun" >],</SPAN></LI><LI class="L1" ><SPAN class="pln" >   </SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >factory</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L2" ><SPAN class="pln" >       factory</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >create</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'Trim'</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > </SPAN><SPAN class="str" >'Lowercase'</SPAN><SPAN class="pun" >]).</SPAN><SPAN class="kwd" >then</SPAN><SPAN class="pun" >(</SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L3" ><SPAN class="pln" >           filteredValue </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > filter</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >filter</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI><LI class="L4" ><SPAN class="pln" >       </SPAN><SPAN class="pun" >})</SPAN></LI><LI class="L5" ><SPAN class="pln" >   </SPAN><SPAN class="pun" >}</SPAN></LI><LI class="L6" ><SPAN class="pun" >)</SPAN></LI></OL></PRE>
+<P >The filter factory uses <CODE >havok/di</CODE> to create and configure the filters. It accepts any valid di config.</P></SECTION>    <SECTION id="validators" title="Validators" ><H1 >Validators</H1>
+<P >Validators will check if data meets certain criteria and return a message if it does not.</P>
+<P >Havok uses the <A href="http://zoopcommerce.github.io/mystique" >mystique</A> validator library. Which includes:</P>
+<UL >    <LI >Alpha</LI>    <LI >Boolean</LI>    <LI >Chain</LI>    <LI >CreditCard</LI>    <LI >CreditCardExpiry</LI>    <LI >Cvv</LI>    <LI >Date</LI>    <LI >Equal</LI>    <LI >Alpha</LI>    <LI >Float</LI>    <LI >GreaterThan</LI>    <LI >LessThan</LI>    <LI >HexColor</LI>    <LI >Int</LI>    <LI >Length</LI>    <LI >LessThan</LI>    <LI >LethThanEqual</LI>    <LI >NotEqual</LI>    <LI >NotRequired</LI>    <LI >Password</LI>    <LI >Regex</LI>    <LI >Slug</LI>    <LI >String</LI>    <LI >And probably more ...</LI></UL>
+<H2 >Mystique Validators</H2>
+<P >Use the mystique validators as described in the mystique docs. Eg</P>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >require</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'mystique/Length'</SPAN><SPAN class="pun" >],</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="typ" >Length</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L1" ><SPAN class="pln" >    </SPAN><SPAN class="kwd" >var</SPAN><SPAN class="pln" > validator </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >new</SPAN><SPAN class="pln" > </SPAN><SPAN class="typ" >Length</SPAN><SPAN class="pun" >({</SPAN><SPAN class="pln" >min</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="lit" >10</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > max</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="lit" >20</SPAN><SPAN class="pun" >}),</SPAN></LI><LI class="L2" ><SPAN class="pln" >        result </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > validator</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >isValid</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >myValue</SPAN><SPAN class="pun" >);</SPAN></LI><LI class="L3" ><SPAN class="pun" >})</SPAN></LI></OL></PRE>
+<P >Mystique validators can be extended and chained. See the mystique docs for more detail.</P>
+<H2 >Validator Factory</H2>
+<P >The validator factory can be used to create instances of validators. eg:</P>
+<PRE class="prettyprint linenums" ><OL class="linenums" ><LI class="L0" ><SPAN class="kwd" >require</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'havok/get!havok/validator/factory'</SPAN><SPAN class="pun" >],</SPAN></LI><LI class="L1" ><SPAN class="pln" >   </SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >factory</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L2" ><SPAN class="pln" >       factory</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >create</SPAN><SPAN class="pun" >([</SPAN><SPAN class="str" >'Alpha'</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >{</SPAN><SPAN class="kwd" >base</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="str" >'Length'</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > </SPAN><SPAN class="kwd" >params</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="pun" >{</SPAN><SPAN class="pln" >min</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="lit" >5</SPAN><SPAN class="pun" >,</SPAN><SPAN class="pln" > max</SPAN><SPAN class="pun" >:</SPAN><SPAN class="pln" > </SPAN><SPAN class="lit" >10</SPAN><SPAN class="pun" >}}]).</SPAN><SPAN class="kwd" >then</SPAN><SPAN class="pun" >(</SPAN><SPAN class="kwd" >function</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >validator</SPAN><SPAN class="pun" >){</SPAN></LI><LI class="L3" ><SPAN class="pln" >           result </SPAN><SPAN class="pun" >=</SPAN><SPAN class="pln" > validator</SPAN><SPAN class="pun" >.</SPAN><SPAN class="pln" >isValid</SPAN><SPAN class="pun" >(</SPAN><SPAN class="pln" >value</SPAN><SPAN class="pun" >);</SPAN></LI><LI class="L4" ><SPAN class="pln" >       </SPAN><SPAN class="pun" >})</SPAN></LI><LI class="L5" ><SPAN class="pln" >   </SPAN><SPAN class="pun" >}</SPAN></LI><LI class="L6" ><SPAN class="pun" >)</SPAN></LI></OL></PRE>
+<P >The validator factory uses <CODE >havok/di</CODE> to create and configure the validators. It accepts any valid di config.</P></SECTION>        </DIV>    </DIV></DIV>
